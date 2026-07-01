@@ -21,6 +21,15 @@ The goal is to understand the business environment, assets, and potential risks.
 ## 2. PROTECT
 The goal is to develop and implement appropriate safeguards.
 
+### Technical Implementation & Setup Instruction
+To deploy the automated system security scripts included in this repository:
+1. Clone this repository to the local security server:
+   ```bash
+   git clone [https://github.com/Adamuhamisu12345/Cybersecurity-SMB-Capstone.git](https://github.com/Adamuhamisu12345/Cybersecurity-SMB-Capstone.git)
+
+
+
+
 ### Identity Management and Access Control
 *   **Multi-Factor Authentication (MFA):** Mandatory MFA enabled on all corporate emails and administrator accounts.
 *   **Principle of Least Privilege (PoLP):** Standard staff accounts will not have administrative privileges.
@@ -34,6 +43,7 @@ The goal is to implement appropriate activities to identify cybersecurity events
 Continuous Monitoring
 Endpoint Detection and Response (EDR): Anti-malware and EDR software installed on all endpoints.
 Traffic Analysis: Network traffic logs are captured weekly using Wireshark to monitor for suspicious outbound data or unauthorized access spikes.
+
 4. RESPOND
 The goal is to take action regarding a detected cybersecurity incident.
 Incident Response Plan (IRP)
@@ -45,10 +55,5 @@ The goal is to restore capabilities or services that were impaired.
 Backup and Recovery Strategy
 The 3-2-1 Backup Rule: Automated daily backups are created via the backup_script.sh, generating redundant copies across safe local targets and an immutable offline remote node.
 
-### Technical Implementation & Setup Instruction
-To deploy the automated system security scripts included in this repository:
-1. Clone this repository to the local security server:
-   ```bash
-   git clone [https://github.com/Adamuhamisu12345/Cybersecurity-SMB-Capstone.git](https://github.com/Adamuhamisu12345/Cybersecurity-SMB-Capstone.git)
 
 Give execution privileges to the baseline compliance backup script:

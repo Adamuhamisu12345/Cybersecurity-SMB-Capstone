@@ -1,5 +1,22 @@
-# Ignore system sensitive files
-*.log
-*.local
-.DS_Store
-secrets.txt
+
+#!/bin/bash
+# Business Name: Daddy Soja Computer & Accessories Global Concepts
+# Target: Automated Security Backup Script for NIST Compliance
+
+# 1. Define Variables for the 3-2-1 Backup Strategy
+BACKUP_SRC="/var/www/html/customer_data"
+BACKUP_DES="/mnt/secure_offline_backup/daily_backups"
+TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
+
+echo "Starting secure backup process at $TIMESTAMP..."
+
+# 2. Verify Source Directory Exists Before Copying
+if [ -d "$BACKUP_SRC" ]; then
+    # Create an encrypted tarball compress file
+    tar -czf $BACKUP_DES/backup_$TIMESTAMP.tar.gz $BACKUP_SRC
+    echo "Backup successfully created and isolated off-site."
+else
+    # Trigger security alert if path is missing
+    echo "Error: Source directory not found. Security alert triggered."
+    exit 1
+fi

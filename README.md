@@ -1,6 +1,6 @@
 # Cybersecurity Framework and Implementation Plan
-**Target Business:** Daddy Soja Computer & Accessories Global Concepts  
-**Business Type:** Small Business Enterprise (IT Hardware Retail & Support Services)  
+**Target Business:** Daddy Soja Computer & Accessories Global Concepts 
+**Business Type:** Small Business Enterprise (IT Hardware Retail & Support Services) 
 **Framework Utilized:** NIST Cybersecurity Framework (Version 1.1)
 
 ---
@@ -9,36 +9,32 @@
 The goal is to understand the business environment, assets, and potential risks.
 
 ### Asset Inventory
-*   **Physical Assets:** 15 Desktop/Laptop computers, 2 Network Printers, 1 Central Network Switch, and 1 Edge Router.
-*   **Digital Assets:** Customer database, financial transaction records, point-of-sale (POS) data, and supplier/inventory databases.
+* **Physical Assets:** 15 Desktop/Laptop computers, 2 Network Printers, 1 Central Network Switch, and 1 Edge Router.
+* **Digital Assets:** Customer database, financial transaction records, point-of-sale (POS) data, and supplier/inventory databases.
 
 ### Risk Assessment
-*   **Ransomware:** High risk due to potential exposure via email attachments, which could lock critical inventory and financial systems.
-*   **Phishing:** High risk of staff being tricked into revealing login credentials or transferring business funds.
+* **Ransomware:** High risk due to potential exposure via email attachments, which could lock critical inventory and financial systems.
+* **Phishing:** High risk of staff being tricked into revealing login credentials or transferring business funds.
 
 ---
 
 ## 2. PROTECT
 The goal is to develop and implement appropriate safeguards.
 
-### Technical Implementation & Setup Instruction
-To deploy the automated system security scripts included in this repository:
-1. Clone this repository to the local security server:
-   ```bash
-   git clone [https://github.com/Adamuhamisu12345/Cybersecurity-SMB-Capstone.git](https://github.com/Adamuhamisu12345/Cybersecurity-SMB-Capstone.git)
-
-
-
-
 ### Identity Management and Access Control
-*   **Multi-Factor Authentication (MFA):** Mandatory MFA enabled on all corporate emails and administrator accounts.
-*   **Principle of Least Privilege (PoLP):** Standard staff accounts will not have administrative privileges.
+* **Multi-Factor Authentication (MFA):** Mandatory MFA enabled on all corporate emails and administrator accounts.
+* **Principle of Least Privilege (PoLP):** Standard staff accounts will not have administrative privileges.
+
+Navigate to the scripts directory and grant execution privileges
+
+cd scripts
 chmod +x backup_script.sh
 
-Run the secure backup script to isolate operational data:
+Run the secure backup script to isolate operational data
+
 ./backup_script.sh
 
-3. DETECT
+DETECT
 The goal is to implement appropriate activities to identify cybersecurity events.
 Continuous Monitoring
 Endpoint Detection and Response (EDR): Anti-malware and EDR software installed on all endpoints.
@@ -50,10 +46,16 @@ Incident Response Plan (IRP)
 Containment: Immediately disconnect the infected network node from the local network switch or access point.
 Escalation: Report the incident to the Security Officer with log timestamps.
 Mitigation: Execute root-cause malware analysis and eliminate system persistence markers.
+
 5. RECOVER
 The goal is to restore capabilities or services that were impaired.
 Backup and Recovery Strategy
-The 3-2-1 Backup Rule: Automated daily backups are created via the backup_script.sh, generating redundant copies across safe local targets and an immutable offline remote node.
+The 3-2-1 Backup Rule: Automated daily backups are created via the scripts/backup_script.sh, generating redundant copies across safe local targets and an immutable offline remote node.
 
 
-Give execution privileges to the baseline compliance backup script:
+### Technical Implementation & Setup Instruction
+To deploy the automated system security scripts included in this repository:
+
+1. Clone this repository to the local security server:
+```bash
+git clone [https://github.com/Adamuhamisu12345/Cybersecurity-SMB-Capstone.git](https://github.com/Adamuhamisu12345/Cybersecurity-SMB-Capstone.git)
